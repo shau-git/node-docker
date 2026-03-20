@@ -52,7 +52,7 @@ app.use(session({
     cookie: {                 // Fixed typo
         secure: false,        // false for local/HTTP testing
         httpOnly: true,
-        maxAge: 30000         // 30 seconds
+        maxAge: 60000         // 60 seconds
     }
 }))
 app.use(express.json())
