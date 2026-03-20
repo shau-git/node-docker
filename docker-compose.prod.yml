@@ -10,11 +10,11 @@ services:
         NODE_ENV: production 
     environment:
       - NODE_ENV=production
-      - MONGO_USER=${MONGO_USER}
-      - MONGO_PASSWORD=${MONGO_PASSWORD} # to assign the env var in linux terminal => export SESSION_SECRET="secret"
-      - SESSION_SECRET=${SESSION_SECRET} # use linux terminal to store the env => vi.env    , :wq (to save & exit), ls -la & cat .env, i saved in /home/sj/docker_youtube
+      - MONGO_USER #=${MONGO_USER}
+      - MONGO_PASSWORD #=${MONGO_PASSWORD} # to assign the env var in linux terminal => export SESSION_SECRET="secret"
+      - SESSION_SECRET #=${SESSION_SECRET} # use linux terminal to store the env => vi.env    , :wq (to save & exit), ls -la & cat .env, i saved in /home/sj/docker_youtube
     command: node index.js
   mongo:
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
-      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
+      - MONGO_INITDB_ROOT_USERNAME #=${MONGO_INITDB_ROOT_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD #=${MONGO_INITDB_ROOT_PASSWORD}
