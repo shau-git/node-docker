@@ -7,6 +7,7 @@ let {RedisStore} = require("connect-redis")
 
 
 const {MONGO_USER, MONGO_PASSWORD, MONGO_IP, MONGO_PORT, REDIS_URL, REDIS_PORT, SESSION_SECRET} = require("./config/config")
+console.log("__________________________________", MONGO_USER)
 const app = express()
 
 // 1. Initialize Redis Client
