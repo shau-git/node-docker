@@ -36,6 +36,4 @@ services:
 volumes:
   mongo-db:
   
-networks:
-  app-network:
-    driver: overlay
+  
