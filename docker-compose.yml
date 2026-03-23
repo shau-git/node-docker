@@ -4,6 +4,8 @@ services:
     image: nginx:stable-alpine
     ports:
       - "3000:80"
+    networks:
+      - app-network
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
   node-app:
@@ -11,6 +13,8 @@ services:
     image: shaujie/node-app
     environment:
       - PORT=3000
+    networks:
+      - app-network
     depends_on:
       - mongo 
       
@@ -19,11 +23,19 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=shau
       - MONGO_INITDB_ROOT_PASSWORD=mypassword
+    networks:
+      - app-network
     volumes:
       - mongo-db:/data/db
 
   redis:
     image: redis
+    networks:
+      - app-network
     
 volumes:
   mongo-db:
+
+networks:
+  app-network:
+    driver: overlay
