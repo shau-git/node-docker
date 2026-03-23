@@ -22,3 +22,6 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=shau
       - MONGO_INITDB_ROOT_PASSWORD=mypassword
 
+networks:
+  app-network:
+    driver: bridge
